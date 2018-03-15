@@ -1,0 +1,93 @@
+{
+	"name": "<%app.name%>",
+	"log": {
+		"level": "info",
+		"stdout": {
+			"foo": "bar"
+		}
+	},
+	"mongodb": {
+		"uri": "<%db.uri%>"
+	},
+	"app": {},
+	"api": {
+		"name": "<%app.name%>.rest",
+		"port": "<%port%>",
+		"hostname": "<%server.domain%>",
+		"https": false,
+		"cookies": {
+			"domain": "<%server.domain%>",
+			"secure": false
+		},
+		"cors": {
+			"credentials": true,
+			"origin": "echo"
+    },
+		"responses": {
+			"headerNamespace": "x-doocoop"
+		},
+		"trace": {
+			"headers": {
+				"id": "x-doocoop-client-request",
+				"parent": "x-doocoop-parent-request",
+				"ip": "x-doocoop-ip"
+			}
+		},
+		"logger": {
+			"fields": {
+				"api": "<%app.name%>.rest"
+			},
+			"responseTiming": true
+		},
+		"error": {
+			"map": {
+				"doocoop.resource.not-found": {
+					"response": "notFound",
+					"details": true
+				},
+				"doocoop.auth.application-required": {
+					"response": "unauthorized",
+					"details": "Application is missing"
+				},
+				"doocoop.auth.application-unknown": {
+					"response": "unauthorized",
+					"details": "Unknown application"
+				},
+				"doocoop.auth.application-origin-invalid": {
+					"response": "unauthorized",
+					"details": "Request origin is not allowed by application"
+				},
+				"doocoop.auth.token-required": {
+					"response": "unauthorized",
+					"details": "Token is missing"
+				},
+				"doocoop.auth.token-not-allowed": {
+					"response": "unauthorized",
+					"details": "Token exists, logout first"
+				},
+				"doocoop.auth.token-invalid": {
+					"response": "unauthorized",
+					"details": true
+				},
+				"doocoop.auth.username-not-unique": {
+					"response": "conflict",
+					"details": "Username is not unique"
+				},
+				"doocoop.auth.credentials-invalid": {
+					"response": "notFound",
+					"details": "Invalid credentials"
+				}
+			}
+		},
+		"interceptors": {
+			"readToken": {
+				"tokenCookie": "<%cookies.token%>"
+			}
+		},
+		"routers": {
+			"auth": {
+				"tokenCookie": "<%cookies.token%>"
+			}
+		}
+	}
+}

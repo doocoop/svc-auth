@@ -1,0 +1,6 @@
+{
+	"app.name": "doocoop.svc.auth",
+	"server.domain": "auth.doocoop.io",
+	"cookies.token": "access_token",
+	"db.uri": "mongodb://localhost/doocoop-auth"
+}

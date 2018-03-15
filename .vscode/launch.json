@@ -1,0 +1,36 @@
+{
+	// Use IntelliSense to learn about possible Node.js debug attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "./bin/svc",
+			"program": "${workspaceRoot}/bin/svc",
+			"console": "integratedTerminal",
+			"cwd": "${workspaceRoot}/"
+		},
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "./bin/svc (nodemon)",
+			"runtimeExecutable": "nodemon",
+			"program": "${workspaceRoot}/bin/svc",
+			"restart": true,
+			"console": "integratedTerminal",
+			"internalConsoleOptions": "neverOpen"
+		},
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "./bin/svc (nodemon | bunyan)",
+			"runtimeExecutable": "${workspaceRoot}/bin/svc-bunyan.sh",
+			"program": "${workspaceRoot}/bin/svc",
+			"restart": true,
+			"console": "integratedTerminal",
+			"internalConsoleOptions": "neverOpen"
+		}
+	]
+}

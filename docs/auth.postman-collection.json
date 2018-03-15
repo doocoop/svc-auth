@@ -1,0 +1,654 @@
+{
+	"info": {
+		"name": "cork-labs.auth",
+		"_postman_id": "aadd4d2d-cb9d-d2e2-5849-115ed93e20fd",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "account",
+			"item": [
+				{
+					"name": "GET /account",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://{{hostname}}:{{port}}/account",
+							"protocol": "http",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://{{hostname}}:{{port}}/account",
+							"protocol": "http",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /account/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://{{hostname}}:{{port}}/account/5aa2bf872522620d81284640",
+							"protocol": "http",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"account",
+								"5aa2bf872522620d81284640"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /account/not-found",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://{{hostname}}:{{port}}/account/1a9aef8d2c14e241822bd8a9",
+							"protocol": "http",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"account",
+								"1a9aef8d2c14e241822bd8a9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /account/invalid-id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://{{hostname}}:{{port}}/account/1a9aef8d2c14e241822bd8a9",
+							"protocol": "http",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"account",
+								"1a9aef8d2c14e241822bd8a9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "application",
+			"item": [
+				{
+					"name": "GET /application",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://{{hostname}}:{{port}}/application",
+							"protocol": "http",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"application"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /application",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://{{hostname}}:{{port}}/application",
+							"protocol": "http",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"application"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /application/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://{{hostname}}:{{port}}/application/5a9df3ee964194b3843203ea",
+							"protocol": "http",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"application",
+								"5a9df3ee964194b3843203ea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /application/not-found",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://{{hostname}}:{{port}}/application/1a9aef8d2c14e241822bd8a9",
+							"protocol": "http",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"application",
+								"1a9aef8d2c14e241822bd8a9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /application/invalid-id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://{{hostname}}:{{port}}/application/foobar",
+							"protocol": "http",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"application",
+								"foobar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "GET /auth/me",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "origin",
+								"value": "in.dev.doocoop.io"
+							},
+							{
+								"key": "x-doocoop-application",
+								"value": "{{application}}"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://{{hostname}}:{{port}}/auth/me",
+							"protocol": "http",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /auth/login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-doocoop-application",
+								"value": "{{application}}"
+							},
+							{
+								"key": "origin",
+								"value": "in.dev.doocoop.io"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"@\",\n\t\"password\": \"@\"\n}"
+						},
+						"url": {
+							"raw": "http://{{hostname}}:{{port}}/auth/login",
+							"protocol": "http",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /auth/login (no application)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"@\",\n\t\"password\": \"@\"\n}"
+						},
+						"url": {
+							"raw": "http://{{hostname}}:{{port}}/auth/login",
+							"protocol": "http",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /auth/login (unknown application)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-doocoop-application",
+								"value": "5aa48c1ecf5f5527847fe07a"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"@\",\n\t\"password\": \"@\"\n}"
+						},
+						"url": {
+							"raw": "http://{{hostname}}:{{port}}/auth/login",
+							"protocol": "http",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"auth",
+								"login"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "POST /auth/login (invalid origin)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-doocoop-application",
+								"value": "{{application}}"
+							},
+							{
+								"key": "origin",
+								"value": "in.dev.doocoop.foo"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"@\",\n\t\"password\": \"@\"\n}"
+						},
+						"url": {
+							"raw": "http://{{hostname}}:{{port}}/auth/login",
+							"protocol": "http",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /auth/login (invalid credentials)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-doocoop-application",
+								"value": "{{application}}"
+							},
+							{
+								"key": "origin",
+								"value": "in.dev.doocoop.io"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"!\",\n\t\"password\": \"@\"\n}"
+						},
+						"url": {
+							"raw": "http://{{hostname}}:{{port}}/auth/login",
+							"protocol": "http",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /auth/signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "x-doocoop-application",
+								"value": "{{application}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"@\",\n\t\"password\": \"@\"\n}"
+						},
+						"url": {
+							"raw": "http://{{hostname}}:{{port}}/auth/signup",
+							"protocol": "http",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /auth/signup  (no application)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"@\",\n\t\"password\": \"@\"\n}"
+						},
+						"url": {
+							"raw": "http://{{hostname}}:{{port}}/auth/signup",
+							"protocol": "http",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /auth/logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://{{hostname}}:{{port}}/auth/logout",
+							"protocol": "http",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "GET /user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://{{hostname}}:{{port}}/user",
+							"protocol": "http",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST /user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://{{hostname}}:{{port}}/user",
+							"protocol": "http",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /user/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://{{hostname}}:{{port}}/user/5a9df416964194b3843203eb",
+							"protocol": "http",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"user",
+								"5a9df416964194b3843203eb"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /user/not-found",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://{{hostname}}:{{port}}/user/1a9aef8d2c14e241822bd8a9",
+							"protocol": "http",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"user",
+								"1a9aef8d2c14e241822bd8a9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET /user/invalid-id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://{{hostname}}:{{port}}/user/foobar",
+							"protocol": "http",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"user",
+								"foobar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "errors",
+			"item": [
+				{
+					"name": "GET /not-found",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://{{hostname}}:{{port}}/foobar",
+							"protocol": "http",
+							"host": [
+								"{{hostname}}"
+							],
+							"port": "{{port}}",
+							"path": [
+								"foobar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
