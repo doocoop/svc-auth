@@ -19,11 +19,11 @@
     "coverage": "http-server coverage/lcov-report/"
   },
   "dependencies": {
-    "@cork-labs/config-reader": "^0.2.0",
+    "@cork-labs/config-reader": "^0.2.1",
     "@cork-labs/mixin-emitter": "^0.1.1",
-    "@cork-labs/monkfish": "^0.1.0",
+    "@cork-labs/monkfish": "^0.2.0",
     "@cork-labs/monkfish-adapter-logger": "^0.0.2",
-    "@cork-labs/monkfish-adapter-mongoose": "^0.0.2",
+    "@cork-labs/monkfish-adapter-mongoose": "^0.1.0",
     "@cork-labs/monkfish-port-http": "^0.1.0",
     "@doocoop/module-auth": "^0.0.1",
     "bunyan": "^1.8.12"
