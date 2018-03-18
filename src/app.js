@@ -19,10 +19,15 @@ class App extends Application {
   constructor (db, config) {
     super(_.merge({}, defaults, config));
     this._db = db;
+    const $c = this._config;
 
-    const authConfig = this._config.modules.auth;
-    const authModule = new AuthModule(db, authConfig);
+    const authModule = new AuthModule(db, $c.modules.auth);
     this.addModule(authModule);
+
+    this.addErrorMap({
+      'monkfish.application.event-unknown': true,
+      'doocoop.resource.not-found': true
+    });
 
     this._emitter = emitterMixin(this);
   }

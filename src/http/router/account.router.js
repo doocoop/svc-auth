@@ -11,6 +11,7 @@ const defaults = {
 class AccountRouter extends Router {
   constructor (port, application, logger, config) {
     super(port, application, logger, _.merge({}, defaults, config));
+    // const $c = this._config;
 
     this.route('get', '/', {
       event: 'account.list',

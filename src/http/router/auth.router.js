@@ -12,6 +12,7 @@ const defaults = {
 class AuthRouter extends Router {
   constructor (port, application, logger, config) {
     super(port, application, logger, _.merge({}, defaults, config));
+    const $c = this._config;
 
     this.route('get', '/me', {
       event: 'auth.me',
@@ -27,7 +28,7 @@ class AuthRouter extends Router {
         event.params.password = req.body.password;
       },
       response: (req, res, result, context) => {
-        res.setSessionCookie(this._config.tokenCookie, result.meta.token);
+        res.setSessionCookie($c.tokenCookie, result.meta.token);
         res.response.ok(result.data);
       }
     });
@@ -46,7 +47,7 @@ class AuthRouter extends Router {
     this.route('post', '/logout', {
       event: 'auth.logout',
       response: (req, res, result, context) => {
-        res.unsetCookie(this._config.tokenCookie);
+        res.unsetCookie($c.tokenCookie);
         res.response.noContent();
       }
     });

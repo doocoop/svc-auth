@@ -22,32 +22,30 @@ const defaults = {
 class Api extends Port {
   constructor (app, logger, config) {
     super(logger, _.merge({}, defaults, config));
-
-    const interceptors = this._config.interceptors;
-    const routers = this._config.routers;
+    const $c = this._config;
 
     this.notFound((req, res) => {
       res.response.notFound({ resource: 'doocoop.auth.api.endpoint' });
     });
 
-    this.interceptor(new ReadOriginInterceptor(interceptors.readOrigin));
-    this.interceptor(new ReadTokenInterceptor(interceptors.readToken));
-    this.interceptor(new ReadApplicationInterceptor(interceptors.readApplication));
+    this.interceptor(new ReadOriginInterceptor($c.interceptors.readOrigin));
+    this.interceptor(new ReadTokenInterceptor($c.interceptors.readToken));
+    this.interceptor(new ReadApplicationInterceptor($c.interceptors.readApplication));
 
     this.pre(ReadOriginInterceptor);
     this.pre(ReadTokenInterceptor);
     this.pre(ReadApplicationInterceptor);
 
-    const accountRouter = new AccountRouter(this, app, logger, routers.account);
+    const accountRouter = new AccountRouter(this, app, logger, $c.routers.account);
     this.route('/account', accountRouter);
 
-    const applicationRouter = new ApplicationRouter(this, app, logger, routers.application);
+    const applicationRouter = new ApplicationRouter(this, app, logger, $c.routers.application);
     this.route('/application', applicationRouter);
 
-    const authRouter = new AuthRouter(this, app, logger, routers.auth);
+    const authRouter = new AuthRouter(this, app, logger, $c.routers.auth);
     this.route('/auth', authRouter);
 
-    const userRouter = new UserRouter(this, app, logger, routers.user);
+    const userRouter = new UserRouter(this, app, logger, $c.routers.user);
     this.route('/user', userRouter);
   }
 
