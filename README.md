@@ -58,7 +58,7 @@ node_modules/.bin/npm-bump minor
 
 ## See Also
 
-- [Monkfish](https://github.comn/cork-labs/monkfish).
+- [Monkfish](https://github.com/cork-labs/monkfish).
 
 
 ## [MIT License](LICENSE)
