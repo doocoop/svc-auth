@@ -21,16 +21,17 @@
   "dependencies": {
     "@cork-labs/config-reader": "^0.2.1",
     "@cork-labs/mixin-emitter": "^0.1.1",
-    "@cork-labs/monkfish": "^0.2.0",
+    "@cork-labs/monkfish": "^0.2.1",
     "@cork-labs/monkfish-adapter-logger": "^0.0.2",
     "@cork-labs/monkfish-adapter-mongoose": "^0.1.0",
     "@cork-labs/monkfish-port-http": "^0.1.0",
-    "@doocoop/module-auth": "^0.0.1",
+    "@doocoop/module-auth": "^0.1.0",
     "bunyan": "^1.8.12"
   },
   "devDependencies": {
     "chai": "^4.1.2",
-    "eslint": "^4.18.1",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^4.19.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-node": "^6.0.1",
@@ -39,7 +40,7 @@
     "istanbul": "^0.4.5",
     "mocha": "^5.0.1",
     "nodemon": "^1.17.1",
-    "sinon": "^4.4.2",
+    "sinon": "^4.4.6",
     "sinon-chai": "^2.14.0"
   }
 }
